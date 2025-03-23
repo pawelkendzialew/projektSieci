@@ -1,0 +1,8 @@
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/regulatixPRO.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/install.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/install/local.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/regulatixPRO_autogen_timestamp_deps.dir
+C:/Users/MSI/Desktop/ProjSieci/regulator/build/Desktop-Debug/CMakeFiles/regulatixPRO_autogen.dir
