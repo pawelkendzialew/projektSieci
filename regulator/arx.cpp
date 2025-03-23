@@ -68,38 +68,46 @@ void ARX::run_noise()
     std::random_device rd;
     std::mt19937 gen(rd());
 
+
+    if (this->noise == 0.0f) {
+        this->noise_part = 0.0f;
+        return;
+    }
+
+    float safe_noise = this->noise;
+    if (safe_noise <= 0.0f) {
+        safe_noise = 1e-6f;
+    }
+
     switch (this->noise_type) {
     case NoiseType::normal:
-        this->noise_part = std::normal_distribution<float>(0, this->noise)(gen);
-        return;
+        this->noise_part = std::normal_distribution<float>(0, safe_noise)(gen);
+        break;
 
     case NoiseType::uniform:
-        this->noise_part = std::uniform_real_distribution<float>(-this->noise, this->noise)(gen);
-        return;
-
     case NoiseType::triangular:
-        this->noise_part = std::uniform_real_distribution<float>(-this->noise, this->noise)(gen);
-        return;
+        this->noise_part = std::uniform_real_distribution<float>(-safe_noise, safe_noise)(gen);
+        break;
 
     case NoiseType::exponential:
-        this->noise_part = std::exponential_distribution<float>(this->noise)(gen);
-        return;
+        this->noise_part = std::exponential_distribution<float>(safe_noise)(gen);
+        break;
 
     case NoiseType::laplace:
-        this->noise_part = 0;
-        return;
+        this->noise_part = 0.0f;
+        break;
 
     case NoiseType::poisson:
-        this->noise_part = std::poisson_distribution(this->noise)(gen);
-        return;
+        this->noise_part = std::poisson_distribution<int>(safe_noise)(gen);
+        break;
 
     case NoiseType::gamma:
-        this->noise_part = std::gamma_distribution<float>(this->noise, this->noise)(gen);
-        return;
+        this->noise_part = std::gamma_distribution<float>(safe_noise, safe_noise)(gen);
+        break;
 
     case NoiseType::beta:
-        this->noise_part = 0;
-        return;
+        this->noise_part = 0.0f;
+        break;
     }
 }
 
